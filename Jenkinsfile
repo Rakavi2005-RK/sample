@@ -1,10 +1,15 @@
-pipeline
-{
-  agent any
-  stages{
-    stage("compile"){
-      javac sample.java}
-  stage("run"){
-    java sample}
-  }
+pipeline {
+    agent any
+    stages {
+        stage("Compile") {
+            steps {
+                sh 'javac sample.java'
+            }
+        }
+        stage("Run") {
+            steps {
+                sh 'java sample'
+            }
+        }
+    }
 }
